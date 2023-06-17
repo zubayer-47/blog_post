@@ -37,7 +37,7 @@ const Feed = () => {
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           required
-          className="font-mono bg-sky-200 text-gray-600 px-3 py-2 rounded-sm w-2/3"
+          className="font-mono bg-sky-200 text-gray-600 px-3 py-2 rounded-sm w-2/3 text-xs sm:text-lg"
         />
       </div>
       <div className="mt-5 flex justify-center flex-wrap">

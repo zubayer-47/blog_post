@@ -24,7 +24,7 @@ const UpdatePost = () => {
         }),
       });
       if (res.ok) {
-        router.push("/profile");
+        router.push("/");
         setUpdateing(false);
       }
     } catch (error) {
