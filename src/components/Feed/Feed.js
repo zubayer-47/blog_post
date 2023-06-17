@@ -24,6 +24,7 @@ const Feed = () => {
     );
   };
   let filters = filterBySearch();
+  console.log(filters);
 
   return (
     <section className="mt-5">
