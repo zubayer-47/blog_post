@@ -17,7 +17,7 @@ const Feed = () => {
     };
     fetchPosts();
   }, []);
-  console.log(posts);
+
   return (
     <section className="mt-5">
       <form className="relative w-full text-center">
