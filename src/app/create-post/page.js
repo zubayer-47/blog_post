@@ -1,7 +1,7 @@
 "use client";
 import Form from "@components/Feed/Form";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
 
 const CreatePost = () => {
@@ -28,8 +28,8 @@ const CreatePost = () => {
         }),
       });
       if (res.ok) {
-        router.push("/");
         setSubmitting(false);
+        redirect("/");
       }
     } catch (error) {
       console.log("Submit Error ", error?.message);
