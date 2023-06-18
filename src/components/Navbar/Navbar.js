@@ -1,10 +1,10 @@
 "use client";
+import { getProviders, signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import logo from "../../../public/assets/logo.svg";
 import "../../styles/hreoSection.css";
-import { signIn, signOut, getProviders, useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
 const Navbar = () => {
   const { data: session } = useSession();
   const [provider, setProvider] = useState(null);
@@ -81,7 +81,7 @@ const Navbar = () => {
                   <button
                     type="button"
                     key={provider.name}
-                    onClick={() => signIn(provider.id)}
+                    onClick={() => signIn('github')}
                     className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
                   >
                     <svg
