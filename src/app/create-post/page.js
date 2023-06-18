@@ -13,6 +13,7 @@ const CreatePost = () => {
     post: "",
     tag: "",
   });
+  
   const createPost = async (e) => {
     e.preventDefault();
     setSubmitting(true);

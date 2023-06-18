@@ -1,10 +1,9 @@
 "use client";
-import Image from "next/image";
-import React from "react";
-import "../../styles/hreoSection.css";
 import { captilize } from "@utils/captilize";
-import Link from "next/link";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
+import "../../styles/hreoSection.css";
 
 const PostCard = ({ post, setSearchText }) => {
   const { data: session } = useSession();
@@ -12,13 +11,15 @@ const PostCard = ({ post, setSearchText }) => {
     session?.user.id === post?.creator._id
       ? "/profile"
       : `/userprofile?id=${post?.creator?._id}&name=${post.creator.username}`;
+
+      console.log({post})
   return (
     <div className="min-w-0 max-w-md px-3 py-3 min-h-0 border-2 shadow-lg border-sky-300/60 rounded-md m-2 bg-red-200/75 opacity-80">
       <div className="flex text-center justify-center">
         <div>
           <Link href={qString}>
             <Image
-              src={post.creator.image}
+              src={post?.creator?.image}
               alt="user"
               width={40}
               height={40}
