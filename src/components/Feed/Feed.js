@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import PostCard from "./PostCard";
 import { DebounceInput } from "react-debounce-input";
+import PostCard from "./PostCard";
 
 const Feed = () => {
   const [searchText, setSearchText] = useState("");
@@ -12,6 +12,8 @@ const Feed = () => {
     const fetchPosts = async () => {
       const res = await fetch("/api/post");
       const data = await res.json();
+
+      console.log({data})
       setPosts(data);
     };
     fetchPosts();
